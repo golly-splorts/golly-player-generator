@@ -1,12 +1,18 @@
+import os
 import re
 import json
 
 with open('roster.json', 'r') as f:
     roster = json.load(f)
 
+if not os.path.exists('pages'):
+    raise Exception("Error: pages/ directory must exist")
+
 for teamname, teamroster in roster.items():
 
     html = []
+    html.append('{% extends \'base.html\' %}')
+    html.append('{% block content %}')
     html.append('<div class="container">')
     html.append('<h1>%s Roster</h1>'%teamname)
     html.append('<table class="table">')
@@ -22,20 +28,13 @@ for teamname, teamroster in roster.items():
     sorted_team = sorted(teamroster,  key=(lambda x: (x[1], x[2])))
     for player, row, col in sorted_team:
         html.append('    <tr>')
-        html.append('    <td>')
-        html.append(player)
-        html.append('    </td>')
-        html.append('    <td>')
-        html.append('%s'%row)
-        html.append('    </td>')
-        html.append('    <td>')
-        html.append('%s'%col)
-        html.append('    </td>')
+        html.append('    <td>%s</td><td>%s</td><td>%s</td>'%(player, row, col))
         html.append('    </tr>')
 
     html.append('  </tbody>')
     html.append('</table>')
     html.append('</div>')
+    html.append('{% endblock %}')
 
     fname = teamname.lower()
     fname = re.sub(' ', '_', fname)
