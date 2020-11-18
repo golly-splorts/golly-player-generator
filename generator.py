@@ -468,13 +468,13 @@ class PlayerGen(object):
     def all_rosters(self):
 
         team_roster_function_map = {
-            #'Detroit Grape Chews': self.grape_chews_roster,
-            #'San Diego Balloon Animals': self.balloon_animals_roster,
-            #'Alewife Arsonists': self.arsonists_roster,
-            #'Baltimore Texas': self.texas_roster,
+            'Detroit Grape Chews': self.grape_chews_roster,
+            'San Diego Balloon Animals': self.balloon_animals_roster,
+            'Alewife Arsonists': self.arsonists_roster,
+            'Baltimore Texas': self.texas_roster,
             'Delaware Corporate Shells': self.shells_roster,
-            #'Jersey OSHA Violations': self.osha_roster,
-            #'Tucson Butchers': self.butchers_roster
+            'Jersey OSHA Violations': self.osha_roster,
+            'Tucson Butchers': self.butchers_roster
         }
 
         all_rosters = {}
@@ -484,8 +484,7 @@ class PlayerGen(object):
                 func = team_roster_function_map[teamname]
                 teamroster = func()
             else:
-                pass
-                #teamroster = self.roster(teamname)
+                teamroster = self.roster(teamname)
             all_rosters[teamname] = teamroster
         return all_rosters
 
@@ -493,5 +492,5 @@ class PlayerGen(object):
 if __name__=="__main__":
     p = PlayerGen()
     all_rosters = p.all_rosters()
-    with open('testroster.json', 'w') as f:
+    with open('rosters.json', 'w') as f:
         json.dump(all_rosters, f)
