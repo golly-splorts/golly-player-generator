@@ -107,8 +107,8 @@ class PlayerGen(object):
         i = 0
         roster = []
         while len(playernames) > 0:
-            r = i//rows
-            c = i%rows
+            r = i//cols
+            c = i%cols
             roster.append([playernames.pop(), r, c])
             i += 1
 
@@ -136,8 +136,8 @@ class PlayerGen(object):
         i = 0
         roster = []
         while len(playernames) > 0:
-            r = i//rows
-            c = i%rows
+            r = i//cols
+            c = i%cols
             roster.append([playernames.pop(), r, c])
             i += 1
             if i==nplayers:
@@ -175,8 +175,8 @@ class PlayerGen(object):
         i = 0
         roster = []
         while len(playernames) > 0:
-            r = i//rows
-            c = i%rows
+            r = i//cols
+            c = i%cols
             roster.append([playernames.pop(), r, c])
             i += 1
             if i==nplayers:
@@ -242,8 +242,8 @@ class PlayerGen(object):
         i = 0
         roster = []
         while len(playernames) > 0:
-            r = i//rows
-            c = i%rows
+            r = i//cols
+            c = i%cols
             roster.append([playernames.pop(), r, c])
             i += 1
             if i==nplayers:
@@ -319,8 +319,8 @@ class PlayerGen(object):
         i = 0
         roster = []
         while len(playernames) > 0:
-            r = i//rows
-            c = i%rows
+            r = i//cols
+            c = i%cols
             roster.append([playernames.pop(), r, c])
             i += 1
 
@@ -407,8 +407,8 @@ class PlayerGen(object):
         i = 0
         roster = []
         while len(playernames) > 0:
-            r = i//rows
-            c = i%rows
+            r = i//cols
+            c = i%cols
             roster.append([playernames.pop(), r, c])
             i += 1
 
@@ -457,8 +457,8 @@ class PlayerGen(object):
         i = 0
         roster = []
         while len(playernames) > 0:
-            r = i//rows
-            c = i%rows
+            r = i//cols
+            c = i%cols
             roster.append([playernames.pop(), r, c])
             i += 1
 
